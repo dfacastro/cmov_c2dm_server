@@ -82,7 +82,13 @@ class PropertiesController < ApplicationController
   end
   
   def update
-    @properties = Property.where(["updated_at >= ?", DateTime.parse(params[:date])])
+    if params[:date]
+      @properties = Property.where(["updated_at >= ?", DateTime.parse(params[:date])])
+    else
+      @properties = Property.all
+    end
+    
+    @properties << DateTime.now
 
     render json: @properties    
     
