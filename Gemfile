@@ -9,6 +9,7 @@ gem 'sqlite3'
 
 gem "nifty-generators", :group => :development
 gem "paperclip", "~> 2.4"
+gem 'speedy_c2dm'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,0 +1,3 @@
+API_ACCOUNT_EMAIL = "cmov.c2dm@gmail.com"
+API_ACCOUNT_PASSWORD = "cmov2011"
+TEST_PHONE_C2DM_REGISTRATION_ID = "debjhvhjehn"

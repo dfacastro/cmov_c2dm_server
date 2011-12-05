@@ -1,0 +1,4 @@
+C2DM_API_EMAIL = "cmov.c2dm@gmail.com"
+C2DM_API_PASSWORD = "cmov2011"
+
+SpeedyC2DM::API.set_account(C2DM_API_EMAIL, C2DM_API_PASSWORD)
