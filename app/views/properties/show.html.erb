@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Photo:</b>
-  <%= @property.photo %>
-</p>
-
-<p>
   <b>Kind:</b>
   <%= @property.kind %>
 </p>
@@ -35,6 +30,10 @@
   <%= @property.for_sale %>
 </p>
 
+<p>
+  <b>Photo:</b>
+  <%= image_tag @property.photo.url(:thumb) %>
+</p>
 
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>

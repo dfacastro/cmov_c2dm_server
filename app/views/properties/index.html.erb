@@ -2,13 +2,13 @@
 
 <table>
   <tr>
-    <th>Photo</th>
     <th>Kind</th>
     <th>Address</th>
     <th>City</th>
     <th>Rooms</th>
     <th>Price</th>
     <th>For sale</th>
+    <th>Photo</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,13 +16,13 @@
 
 <% @properties.each do |property| %>
   <tr>
-    <td><%= property.photo %></td>
     <td><%= property.kind %></td>
     <td><%= property.address %></td>
     <td><%= property.city %></td>
     <td><%= property.rooms %></td>
     <td><%= property.price %></td>
     <td><%= property.for_sale %></td>
+    <td><%= image_tag property.photo.url(:thumb) %></td>
     <td><%= link_to 'Show', property %></td>
     <td><%= link_to 'Edit', edit_property_path(property) %></td>
     <td><%= link_to 'Destroy', property, confirm: 'Are you sure?', method: :delete %></td>

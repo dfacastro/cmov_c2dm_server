@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :photo %><br />
-    <%= f.text_field :photo %>
-  </div>
-  <div class="field">
     <%= f.label :kind %><br />
     <%= f.text_field :kind %>
   </div>
@@ -39,6 +35,13 @@
     <%= f.label :for_sale %><br />
     <%= f.check_box :for_sale %>
   </div>
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo %>
+  </div>
+  
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>
