@@ -1,4 +1,6 @@
 CmovC2dmServer::Application.routes.draw do
+  get "properties/create"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

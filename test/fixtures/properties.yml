@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  photo: MyString
+  kind: MyString
+  address: MyString
+  city: MyString
+  rooms: MyString
+  price: 9.99
+  for_sale: false
+
+two:
+  photo: MyString
+  kind: MyString
+  address: MyString
+  city: MyString
+  rooms: MyString
+  price: 9.99
+  for_sale: false
