@@ -80,4 +80,12 @@ class PropertiesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def update
+    @properties = Property.where(["updated_at >= ?", DateTime.parse(params[:date])])
+
+    render json: @properties    
+    
+  end
+  
 end
