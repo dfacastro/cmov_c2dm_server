@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Photo:</b>
+  <%= @property.photo %>
+</p>
+
+<p>
+  <b>Kind:</b>
+  <%= @property.kind %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @property.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @property.city %>
+</p>
+
+<p>
+  <b>Rooms:</b>
+  <%= @property.rooms %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @property.price %>
+</p>
+
+<p>
+  <b>For sale:</b>
+  <%= @property.for_sale %>
+</p>
+
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>
