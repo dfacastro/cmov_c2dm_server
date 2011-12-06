@@ -1,12 +1,11 @@
 require "net/http"
 require "net/https"
 
-class PropertyObserver < ActiveRecord::Observer
-      TEST_EMAIL = "cmov.c2dm@gmail.com"
-TEST_PASSWORD = "cmov2011"
-TEST_REGISTRATION_ID = "DEVICE_TOKEN_RECEIVED_FROM_PHONE"
-  
-  def before_create(model)
+class PropertyObserver < ActiveRecord::Observer  
+  def after_create(model)
+    
+    my_logger.info("******* Added Property no. " + model.id.to_s + " on " + DateTime.now.to_s + " *******")
+    
     Registration.all.each do |reg|
       
       # TODO: notify devices      
@@ -21,17 +20,19 @@ TEST_REGISTRATION_ID = "DEVICE_TOKEN_RECEIVED_FROM_PHONE"
         "data.property_id" => model.id        
       }
       
-      res = SpeedyC2DM::API.send_notification(options)
+      result = SpeedyC2DM::API.send_notification(options)
       
-      p "***************** OPTIONS ************"
-      p options
-
-      p "***************** RES BODY ************"
-      p res.body
-
-
+      if result.body == "Error=MissingRegistration"
+        reg.destroy
+      end
       
+      my_logger.info(result.code + "\t" + result.message + "\t" + result.body.chomp + "\t\t" + reg.name)
+     
     end
+  end
+  
+  def my_logger
+    @@my_logger ||= Logger.new("#{Rails.root}/log/c2dm.log")
   end
   
 end
