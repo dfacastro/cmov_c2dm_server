@@ -38,3 +38,8 @@ group :test do
   gem 'turn', '0.8.2', :require => false
 end
 gem "mocha", :group => :test
+
+group :production do
+  gem 'pg'
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+end
