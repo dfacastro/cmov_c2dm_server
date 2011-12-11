@@ -40,6 +40,7 @@ end
 gem "mocha", :group => :test
 
 group :production do
+  gem 'aws-s3'
   gem 'pg'
   gem 'therubyracer-heroku', '0.8.1.pre3'
 end

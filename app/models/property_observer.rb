@@ -2,7 +2,7 @@ require "net/http"
 require "net/https"
 
 class PropertyObserver < ActiveRecord::Observer  
-  def after_create(model)
+  def after_save(model)
     
     my_logger.info("******* Added Property no. " + model.id.to_s + " on " + DateTime.now.to_s + " *******")
     

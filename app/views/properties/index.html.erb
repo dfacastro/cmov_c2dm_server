@@ -9,6 +9,8 @@
     <th>Price</th>
     <th>For sale</th>
     <th>Photo</th>
+    <th>Bathrooms</th>
+    <th>Extras</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,6 +25,8 @@
     <td><%= property.price %></td>
     <td><%= property.for_sale %></td>
     <td><%= image_tag property.photo.url(:thumb) %></td>
+    <td><%= property.bathrooms %></td>
+    <td><%= property.extras %></td>
     <td><%= link_to 'Show', property %></td>
     <td><%= link_to 'Edit', edit_property_path(property) %></td>
     <td><%= link_to 'Destroy', property, confirm: 'Are you sure?', method: :delete %></td>

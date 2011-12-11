@@ -35,5 +35,15 @@
   <%= image_tag @property.photo.url(:thumb) %>
 </p>
 
+<p>
+  <b>FBathrooms:</b>
+  <%= @property.bathrooms %>
+</p>
+
+<p>
+  <b>Extras:</b>
+  <%= @property.extras %>
+</p>
+
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>
