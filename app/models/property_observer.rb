@@ -3,11 +3,11 @@ require "net/https"
 
 class PropertyObserver < ActiveRecord::Observer  
   def after_create(model)
-    notify('new')
+    notify('new', model)
   end
 
   def after_update(model)
-    notify('update')
+    notify('update', model)
   end  
   
   
@@ -15,7 +15,7 @@ class PropertyObserver < ActiveRecord::Observer
     @@my_logger ||= Logger.new("#{Rails.root}/log/c2dm.log")
   end
   
-  def notify(operation)
+  def notify(operation, model)
     my_logger.info("******* Added Property no. " + model.id.to_s + " on " + DateTime.now.to_s + " *******")
     
     Registration.all.each do |reg|
