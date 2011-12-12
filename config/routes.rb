@@ -1,7 +1,7 @@
 CmovC2dmServer::Application.routes.draw do
   get "registrations/create"
 
-  get 'properties/update'
+  get 'properties/get_update'
   resources :properties
   
   
