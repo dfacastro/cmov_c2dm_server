@@ -10,6 +10,10 @@ class PropertyObserver < ActiveRecord::Observer
     notify('update', model)
   end  
   
+  def after_destroy(model)
+    notify('destroy', model)
+  end  
+  
   
   def my_logger
     @@my_logger ||= Logger.new("#{Rails.root}/log/c2dm.log")
