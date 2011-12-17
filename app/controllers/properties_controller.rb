@@ -83,7 +83,7 @@ class PropertiesController < ApplicationController
   
   def get_update
     if params[:date]
-      @properties = Property.where(["updated_at >= ? and for_sale = true", DateTime.parse(params[:date])])
+      @properties = Property.where(["updated_at >= ?", DateTime.parse(params[:date])]).select {|prop| prop.for_sale}
     else
       @properties = Property.where(for_sale: true)
     end
